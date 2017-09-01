@@ -32,17 +32,22 @@ def push_weather():
         send_msg(life)
         #the parameter is the time you want it be sent to you tomorrow
         bytime.dosleep(9)
-
+#Push your download trends
 def push_download():
+    #init your download list
     check_aria2.init_list()
     while 1:
+        #check download list every 60 seconds
         time.sleep(60)
+        #get trend message and new download list
         msg,new_list=check_aria2.update_complete()
+        #replace download list by a new list
         check_aria2.complete_list=new_list
+        #if the msg is not 'no' then it means got new trends
         if msg!='no':
             send_msg(msg)
 
-
+#creat thread
 t = threading.Thread(target=itchat.run)
 t2 = threading.Thread(target=push_weather)
 t3=threading.Thread(target=push_download)
