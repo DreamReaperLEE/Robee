@@ -7,7 +7,7 @@ import weather
 import bytime
 
 
-itchat.auto_login()#enableCmdQR=-2,hotReload=True
+itchat.auto_login()#enableCmdQR=True,hotReload=True
 #find the traget account by name,if you want to notice your self,then type your own nickname
 users = itchat.search_friends(name="Lee's robot")
 #find user by name

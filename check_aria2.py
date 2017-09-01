@@ -50,6 +50,5 @@ def update_complete():
         more = list(set(new_list).difference(set(old_list)))
         msg='下载有新动态:'
         for every in more:
-            print every
-            msg=msg+'\n'+every
+            msg=msg+'\n'+every+'\n'
     return msg,new_list
