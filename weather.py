@@ -15,13 +15,13 @@ def get_temp():
     today = '今日白天:'+today_json['text_day'].encode('utf-8')+' 夜间：'+today_json['text_night'].encode('utf-8')+'\n最高气温：'+today_json['high'].encode('utf-8')+'℃ 最低气温：'+today_json['low'].encode('utf-8')+'℃'
     day2 = '明日白天:' + day2_json['text_day'].encode('utf-8') + ' 夜间：' + day2_json['text_night'].encode('utf-8') + '\n最高气温：' + day2_json['high'].encode('utf-8') + '℃ 最低气温：' + day2_json['low'].encode('utf-8') + '℃'
     day3 = '后日白天:' + day3_json['text_day'].encode('utf-8') + ' 夜间：' + day3_json['text_night'].encode('utf-8') + '\n最高气温：' + day3_json['high'].encode('utf-8') + '℃ 最低气温：' + day3_json['low'].encode('utf-8') + '℃'
-    msg=city+'\n'+today+'\n'+'😱😱😱😱😱😱😱😱😱😱😱😱😱😱\n'+day2+'\n😱😱😱😱😱😱😱😱😱😱😱😱😱😱\n'+day3
+    msg=city+'\n'+today+'\n'+'😱😱😱😱😱😱😱😱😱😱\n'+day2+'\n😱😱😱😱😱😱😱😱😱😱\n'+day3
     return msg
 
 def get_life():
     c = urllib2.urlopen('https://api.seniverse.com/v3/life/suggestion.json?key=nyxro3e5cgrffpmz&location=haerbin&language=zh-Hans')
     result=json.loads(c.read())
-    city=result['results'][0]['location']['name'].encode('utf-8')+'生活指数😱'
+    city=result['results'][0]['location']['name'].encode('utf-8')+'生活指数😐'
     suggest=result['results'][0]['suggestion']
     travel=suggest['travel']['brief'].encode('utf-8')
     uv=suggest['uv']['brief'].encode('utf-8')
