@@ -45,7 +45,7 @@ And with json format jsonrpc, id, method, params information.
 
 Which tm item I observed is the corresponding operation, tm = 1504257059456 representative is to get the download has been stopped entry. Other tm values ​​can be viewed by the corresponding packet
 
-In python simulation of the web side to send the format of the information, the information obtained to sort, you can get the current download complete the information.
+In python simulation of the web side to send the format of the information, the information obtained to sort, you can get the current download complete the information.<br/>
 Push film trends（film.py）
 -------
 
