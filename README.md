@@ -16,16 +16,17 @@ Overall design ideas
 The directory structure of the project is:
 
 Robee:
-│ bytime.py
-│ chat_robot.py
-│ check_aria2.py
-│ LICENSE
-└─│ weather.py
+│ bytime.py\<br>
+│ chat_robot.py\<br>
+│ check_aria2.py\<br>
+│ LICENSE\<br>
+└─│ weather.py\<br>
 
 
 Where chat_robot is the main file, initializes itchat in the file, creates a process for each query script, and unifies itchat's send function to push the message.
 
-#Weather info (weather.py)
+Weather info (weather.py)
+-------
 
 China weather has three interfaces to obtain weather information data, but the information obtained in addition to the mobile interface to obtain the current temperature information is accurate, the other interface data are clearly inaccurate, so give up.
 
@@ -37,6 +38,7 @@ Download dynamic push (check_aria2.py)
 -------
 
 I used the downloader for aria2, the downloader provides a set of json / rpc interface for the web interface to manage the default port for the 6800. But did not find the interface API, with the port for the packet capture itself to find api
+
 http://ip地址:6800/jsonrpc?tm=1504257059456
 
 And with json format jsonrpc, id, method, params information.
