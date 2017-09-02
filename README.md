@@ -39,13 +39,14 @@ Download dynamic push (check_aria2.py)
 
 I used the downloader for aria2, the downloader provides a set of json / rpc interface for the web interface to manage the default port for the 6800. But did not find the interface API, with the port for the packet capture itself to find api
 
-http://ip地址:6800/jsonrpc?tm=1504257059456
+http://ipaddress:6800/jsonrpc?tm=1504257059456
 
 And with json format jsonrpc, id, method, params information.
 
 Which tm item I observed is the corresponding operation, tm = 1504257059456 representative is to get the download has been stopped entry. Other tm values ​​can be viewed by the corresponding packet
 
-In python simulation of the web side to send the format of the information, the information obtained to sort, you can get the current download complete the information.<br/>
+In python simulation of the web side to send the format of the information, the information obtained to sort, you can get the current download complete the information.
+
 Push film trends（film.py）
 -------
 
