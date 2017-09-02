@@ -15,12 +15,12 @@ Overall design ideas
 
 The directory structure of the project is:
 
-Robee:
-│ bytime.py\<br>
-│ chat_robot.py\<br>
-│ check_aria2.py\<br>
-│ LICENSE\<br>
-└─│ weather.py\<br>
+Robee:<br/>
+│ bytime.py<br/>
+│ chat_robot.py<br/>
+│ check_aria2.py<br/>
+│ LICENSE<br/>
+└─│ weather.py<br/>
 
 
 Where chat_robot is the main file, initializes itchat in the file, creates a process for each query script, and unifies itchat's send function to push the message.
