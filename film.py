@@ -5,25 +5,27 @@ import urllib2
 # 引入相关模块
 from bs4 import BeautifulSoup
 
+# film list
 film_list = []
 
 
+# get new film list and trends
 def get_film_list():
-    old_list=film_list
-    new_list=[]
+    old_list = film_list
+    new_list = []
     url = "http://www.hao6v.com/"
     response = urllib2.urlopen(url)
     wbdata = response.read()
-    # 对获取到的文本进行解析
+    # analysis the text that you got
     soup = BeautifulSoup(wbdata, 'lxml')
-    # 从解析文件中通过select选择器定位指定的元素，返回一个列表
+    # select specific element
     news_titles = soup.select("body > div#main > div.col2 > div.box > ul.lt > li > a")
-    # 对返回的列表进行遍历
+    # ergodic the list
     i = 1
     for n in news_titles:
-        if i==18:
+        if i == 18:
             break
-        # 提取出标题和链接信息
+        # get title
         title = n.get_text().encode('utf-8')
         new_list.append(title)
         i = i + 1
