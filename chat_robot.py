@@ -6,6 +6,7 @@ import itchat  # 主要库
 
 import bytime
 import check_aria2
+import film
 import weather
 
 itchat.auto_login()  # enableCmdQR=True,hotReload=True
@@ -41,7 +42,7 @@ def push_weather():
 # Push your download trends
 def push_download():
     # init your download list
-    check_aria2.init_list()
+    check_aria2.complete_list = check_aria2.init_list()
     while 1:
         # check download list every 60 seconds
         time.sleep(60)
@@ -54,13 +55,32 @@ def push_download():
             send_msg(msg)
 
 
+# Push  film trends
+def push_film():
+    # init your film list
+    msg, film.film_list = film.get_film_list()
+    while 1:
+        # get trend film and new film list
+        msg, new_list = film.get_film_list()
+        # replace film list by a new list
+        film.film_list = new_list
+        # if the msg is not 'no' then it means got new trends
+        if msg != 'no':
+            send_msg(msg)
+        # check film list every 60 seconds
+        time.sleep(3600)
+
+
 # creat thread
 t = threading.Thread(target=itchat.run)
 t2 = threading.Thread(target=push_weather)
 t3 = threading.Thread(target=push_download)
+t4 = threading.Thread(target=push_film)
 t.start()
 t2.start()
 t3.start()
+t4.start()
 t.join()
 t2.join()
 t3.join()
+t4.join()

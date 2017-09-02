@@ -28,6 +28,7 @@ def init_list():
         msg = '文件名：' + name + ' 状态：' + status
         # append new download into list
         complete_list.append(msg)
+    return complete_list
 
 
 # check new download status
