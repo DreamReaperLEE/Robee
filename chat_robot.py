@@ -7,8 +7,8 @@ import itchat  # 主要库
 import bytime
 import check_aria2
 import film
-import weather
 import tuling
+import weather
 
 itchat.auto_login()  # enableCmdQR=True,hotReload=True
 # find the traget account by name,if you want to notice your self,then type your own nickname
@@ -16,10 +16,12 @@ users = itchat.search_friends(name="Lee's robot")
 # find user by name
 userName = users[0]['UserName']
 
-#rigister message reply
+
+# rigister message reply
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
-    return tuling.getTuling(msg["Text"])["text"]
+    return tuling.getTuling(msg["Text"])
+
 
 # send message
 def send_msg(msg):
