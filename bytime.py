@@ -8,7 +8,8 @@ SECONDS_PER_DAY = 24 * 60 * 60
 # set when would you run the function again
 def dosleep(text):
     curTime = datetime.now()
-    desTime = curTime.replace(hour=text, minute=0, second=0, microsecond=0)
-    delta = curTime - desTime
-    skipSeconds = SECONDS_PER_DAY - delta.total_seconds()
+    nextday = curTime.day + 1
+    desTime = curTime.replace(day=nextday, hour=text, minute=0, second=0, microsecond=0)
+    delta = desTime - curTime
+    skipSeconds = delta.total_seconds()
     sleep(skipSeconds)

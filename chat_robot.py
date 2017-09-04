@@ -9,6 +9,7 @@ import check_aria2
 import film
 import tuling
 import weather
+import query_database
 
 itchat.auto_login()  # enableCmdQR=True,hotReload=True
 # find the traget account by name,if you want to notice your self,then type your own nickname
@@ -16,11 +17,18 @@ users = itchat.search_friends(name="Lee's robot")
 # find user by name
 userName = users[0]['UserName']
 
-
 # rigister message reply
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
-    return tuling.getTuling(msg["Text"])
+    msg=msg["Text"]
+    msg=msg.encode('utf-8')
+    #if the message has define in your database ,then return the define
+    query=query_database.query_title(msg)
+    if query!='null':
+        result = query
+    else:
+        result = tuling.getTuling(msg)
+    return result
 
 
 # send message
