@@ -52,3 +52,21 @@ Push film trends（film.py）
 
 design by beautifulsoup4，
 There are many tutorials on the talk, to achieve the principle it's similar with download push .
+
+Use Turing machine (tuling.py)
+-------
+
+
+Bring your own WeChat robot with Turing's API.People can chat with their own robots, but also quite interesting.
+
+First in the itchat TEXT-type message in the registration function
+Second, in this function, the incoming msg through the Turing api to get the results after the return can be
+
+Custom message reply type (query_database.py)
+-------
+
+But because the Turing robot is still not smart enough, and sometimes can be said to answer is very intellectual barrier.
+
+So in mysql to create a table, its internal only three variables, since the increase id, title and content.
+
+After accepting the message, first through the query function database whether there is a similar statement, if any, then reply to the sentence, if not then to the Turing robot to reply.
