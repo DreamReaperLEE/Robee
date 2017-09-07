@@ -51,8 +51,7 @@ def push_weather():
         # send living index information
         send_msg(life)
         # the parameter is the time you want it be sent to you tomorrow
-        bytime.dosleep(9)
-
+        bytime.dosleep('10')
 
 # Push your download trends
 def push_download():
