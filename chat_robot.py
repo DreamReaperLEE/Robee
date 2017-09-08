@@ -11,9 +11,10 @@ import tuling
 import weather
 import query_database
 
-itchat.auto_login()  # enableCmdQR=True,hotReload=True
+
+itchat.auto_login(enableCmdQR=True,hotReload=True)  # enableCmdQR=True,hotReload=True
 # find the traget account by name,if you want to notice your self,then type your own nickname
-users = itchat.search_friends(name="Lee's robot")
+users = itchat.search_friends(name="123456")
 # find user by name
 userName = users[0]['UserName']
 
@@ -51,7 +52,8 @@ def push_weather():
         # send living index information
         send_msg(life)
         # the parameter is the time you want it be sent to you tomorrow
-        bytime.dosleep('10')
+        bytime.dosleep('16')
+        time.sleep(3600)
 
 # Push your download trends
 def push_download():
